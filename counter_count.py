@@ -3,7 +3,7 @@ class Counter:
 
     def __init__(self) -> None:
         Counter.count += 1
-        self.method_caller= 0
+        self.method_caller = 0
 
     def get_count(self):
         self.method_caller += 1
