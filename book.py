@@ -9,9 +9,23 @@ class Book:
 
     def __ne__(self, value: object) -> bool:
         return not self.__eq__(value)
-    
-book1 = Book("Title1", "Author1")
-book2 = Book("Title2", "Author2")
 
-print(book1 == book2)
-print(book1 != book2)
+class Library:
+    def __init__(self, books) -> None:
+        self.books = books
+
+    def __len__(self):
+        return len(self.books)
+    
+    def __getitem__(self, index):
+        return self.books[index]
+
+    
+b1 = Book("Title1", "Author1")
+b2 = Book("Title2", "Author2")
+b3 = Book("Title3", "Author3")
+
+library = Library([b1, b2, b3])
+
+print(len(library))
+print(library[2])
